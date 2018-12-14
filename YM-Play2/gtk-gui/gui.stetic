@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/YM-Play2.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="1131 582">
+    <action-group name="Default">
+      <action id="OpenAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Open</property>
+        <property name="ShortLabel" translatable="yes">Open</property>
+      </action>
+      <action id="InfoAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Info</property>
+        <property name="ShortLabel" translatable="yes">Info</property>
+      </action>
+      <action id="DateiAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Datei</property>
+        <property name="ShortLabel" translatable="yes">Datei</property>
+      </action>
+      <action id="InfoAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Info</property>
+        <property name="ShortLabel" translatable="yes">Info</property>
+      </action>
+      <action id="AboutAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">About</property>
+        <property name="ShortLabel" translatable="yes">About</property>
+        <signal name="Activated" handler="OnAboutActionActivated" />
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar3">
+            <property name="MemberName" />
+            <node name="menubar3" type="Menubar">
+              <node type="Menu" action="DateiAction" />
+              <node type="Menu" action="InfoAction1">
+                <node type="Menuitem" action="AboutAction" />
+              </node>
+            </node>
+          </widget>
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="TrackScrolledWindow">
+            <property name="MemberName" />
+            <property name="WidthRequest">702</property>
+            <property name="HeightRequest">227</property>
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.Viewport" id="GtkViewport">
+                <property name="MemberName" />
+                <property name="ShadowType">None</property>
+                <child>
+                  <widget class="Gtk.DrawingArea" id="DrawingTrack">
+                    <property name="MemberName">xxx1</property>
+                    <property name="WidthRequest">1000</property>
+                    <property name="HeightRequest">262</property>
+                    <property name="Events">ExposureMask</property>
+                    <property name="ExtensionEvents">All</property>
+                    <property name="ShowScrollbars">True</property>
+                    <signal name="ExposeEvent" handler="OnDrawingTrackExposeEvent" after="yes" />
+                    <signal name="DragBegin" handler="OnDrawingTrackDragBegin" after="yes" />
+                  </widget>
+                </child>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">28</property>
+            <property name="Y">52</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.DrawingArea" id="drawingarea1">
+            <property name="MemberName" />
+            <property name="WidthRequest">782</property>
+            <property name="HeightRequest">218</property>
+            <signal name="ExposeEvent" handler="OnDrawingarea1ExposeEvent" />
+          </widget>
+          <packing>
+            <property name="X">26</property>
+            <property name="Y">315</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.VScrollbar" id="vscrollbarTrack">
+            <property name="MemberName" />
+            <property name="HeightRequest">209</property>
+            <property name="Upper">100</property>
+            <property name="PageIncrement">1</property>
+            <property name="PageSize">1</property>
+            <property name="StepIncrement">1</property>
+            <signal name="ValueChanged" handler="OnVscrollbarTrackValueChanged" />
+          </widget>
+          <packing>
+            <property name="X">831</property>
+            <property name="Y">339</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
